@@ -21,14 +21,30 @@ public class MyStepdefs {
         value = arg0;
     }
 
+    @Given("^One input value (\\d+) and operator sqrt$")
+    public void oneInputValueAndOperatorSqrt(int arg0) {
+        value = arg0;
+    }
+
     @Given("^One input value -(\\d+) and operator rvs$")
     public void one_input_value_and_operator_rvs(int arg1) {
+        value = -1 * arg1;
+    }
+
+    @Given("^One input value -(\\d+) and operator sqrt$")
+    public void one_input_value_and_operator_sqrt(int arg1) {
         value = -1 * arg1;
     }
 
     @When("^I reverse the value$")
     public void iReverseTheValue() throws Exception{
         result = calculator.rvs(value);
+        System.out.println(result);
+    }
+
+    @When("^I squareroot the value$")
+    public void iSquarerootTheValue() throws Exception{
+        result = calculator.sqrt(value);
         System.out.println(result);
     }
 
@@ -51,4 +67,7 @@ public class MyStepdefs {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+
+
 }
