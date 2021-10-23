@@ -22,7 +22,7 @@ Feature: Calculator
     When I squareroot the value
     Then I expect the result 2
 
-  Scenario Outline: reverse
+  Scenario Outline: squareroot
     Given One input value <Input> and operator <op>
     When I squareroot the value
     Then I expect the result <result>
