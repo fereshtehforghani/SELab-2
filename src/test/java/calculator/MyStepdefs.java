@@ -59,14 +59,14 @@ public class MyStepdefs {
         System.out.println(result);
     }
 
-    @Then("^I expect the result (\\d+)\\.(\\d+)$")
+    @Then("^I expect the rvs result (\\d+)\\.(\\d+)$")
     public void iExpectTheResult(int arg0, int arg1) {
         int numdigits = String.valueOf(arg1).length();
         double a = arg0 + Math.pow(10, -1 * numdigits) * arg1;
         Assert.assertEquals(a, result, 0.0001);
     }
 
-    @Then("^I expect the result -(\\d+)\\.(\\d+)$")
+    @Then("^I expect the rvs result -(\\d+)\\.(\\d+)$")
     public void i_expect_the_result(int arg1, int arg2) {
         int numdigits = String.valueOf(arg2).length();
         double a = arg1 - Math.pow(10, -1 * numdigits) * arg2;
